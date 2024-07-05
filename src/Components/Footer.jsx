@@ -10,7 +10,7 @@ import logocross from "../assets/logocross.svg";
 import { Link } from "react-router-dom";
 const Footer = () => {
   return (
-    <div className="min-h-80 bg-[#E5E5E5]">
+    <div className="min-h-80 bg-[#E5E5E5] mt-8">
       <div>
         <div className="main-footer ">
           <div className="first-part flex  justify-center items-center mx-28">

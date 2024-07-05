@@ -7,12 +7,14 @@ import vector from "../src/assets/curve.png";
 import ShareRecipe from "./Components/ShareRecipe";
 
 import data from "./CardData";
+import Footer from "./Components/Footer";
 
 function App() {
   return (
     <>
       <Header />
       <Outlet />
+      <Footer />
     </>
   );
 }

@@ -73,7 +73,6 @@ const Heropage = () => {
         <PopularCategoriesContainer />
         <Clients />
       </div>
-      <Footer />
     </>
   );
 };
