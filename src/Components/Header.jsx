@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const Header = () => {
   return (
     <>
-      <div className="flex gap-3 justify-between items-center  min-h-24 min-w-max mx-16 mt-8 ">
+      <div className="flex gap-3 justify-between items-center  min-h-24 min-w-[1024px] mx-16 mt-8 ">
         <Link to={"/"}>
           <div className="flex">
             <img src={logocorss} alt="logo" />
