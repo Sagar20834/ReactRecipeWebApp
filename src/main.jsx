@@ -10,6 +10,8 @@ import Heropage from "./Components/Heropage.jsx";
 
 import BlogCard from "./Components/BlogCard.jsx";
 import PopularCategories from "./Components/PopularCategories.jsx";
+import LoginContainer from "./Components/LoginContainer.jsx";
+import SignUp from "./Components/SignUp.jsx";
 
 const router = createBrowserRouter([
   {
@@ -38,8 +40,16 @@ const router = createBrowserRouter([
         element: <AboutUs />,
       },
       {
-        path: "//popular-categories",
+        path: "/popular-categories",
         element: <PopularCategories />,
+      },
+      {
+        path: "/login",
+        element: <LoginContainer />,
+      },
+      {
+        path: "/signup",
+        element: <SignUp />,
       },
     ],
   },

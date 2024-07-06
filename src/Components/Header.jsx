@@ -1,6 +1,7 @@
 import React from "react";
 import logocorss from "../assets/logocross.svg";
 import { Link } from "react-router-dom";
+import Login from "./LoginContainer";
 
 const Header = () => {
   return (
@@ -33,12 +34,20 @@ const Header = () => {
             </li>
           </ul>
         </div>
-        <div className="flex gap-5 shrink min-h-9 ">
-          <button className="bg-[#E7EDE7]  min-w-32 rounded-lg">login</button>
-          <button className="bg-[#B66053] min-w-32  rounded-lg text-white ">
-            Sign Up
-          </button>
-        </div>
+        <Link to={"/login"}>
+          <div className="flex gap-5 shrink min-h-9 ">
+            <button className="bg-[#E7EDE7]  min-w-32 rounded-lg hover:scale-110	">
+              login
+            </button>
+          </div>
+        </Link>
+        <Link to={"/signup"}>
+          <div className="flex gap-5 shrink min-h-9">
+            <button className="bg-[#B66053] min-w-32  rounded-lg text-white hover:scale-110">
+              Sign Up
+            </button>
+          </div>
+        </Link>
       </div>
     </>
   );
