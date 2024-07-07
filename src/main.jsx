@@ -12,6 +12,7 @@ import BlogCard from "./Components/BlogCard.jsx";
 import PopularCategories from "./Components/PopularCategories.jsx";
 import LoginContainer from "./Components/LoginContainer.jsx";
 import SignUp from "./Components/SignUp.jsx";
+import SignUpPage from "./Components/SignUpPage.jsx";
 
 const router = createBrowserRouter([
   {
@@ -45,11 +46,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/login",
-        element: <LoginContainer />,
+        element: <SignUpPage />,
       },
       {
         path: "/signup",
-        element: <SignUp />,
+        element: <LoginContainer />,
       },
     ],
   },

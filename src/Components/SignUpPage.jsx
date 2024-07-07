@@ -1,7 +1,9 @@
 import React, { useState } from "react";
-import { FaEnvelope, FaLock, FaUser } from "react-icons/fa";
+import { FaEnvelope, FaFacebook, FaLock, FaUser } from "react-icons/fa";
+import { FaGoogle } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
-const LoginPage = () => {
+const SignUpPage = () => {
   const [input, setInput] = useState({
     username: "",
     email: "",
@@ -121,7 +123,7 @@ const LoginPage = () => {
           <span className="text-sm">I agree to terms and policy</span>
         </label>
 
-        <div className="flex gap-5 shrink min-h-9 my-8">
+        <div className="flex gap-5 shrink min-h-9 my-4">
           <button
             type="submit"
             className="bg-[#B66053] min-w-32 rounded-lg text-white hover:scale-110"
@@ -130,8 +132,25 @@ const LoginPage = () => {
           </button>
         </div>
       </form>
+      <p>Or You can join with </p>
+      <div className="flex gap-5 justify-around mt-2">
+        <div className="flex justify-center items-center gap-2 border-2 border-gray-400 rounded p-2 w-1/2">
+          <FaGoogle />
+          <p>Sign in with Google</p>
+        </div>
+        <div className="flex justify-center items-center gap-2 border-2 border-gray-400 rounded p-2 w-1/2">
+          <FaFacebook />
+          <p>Sign in with Google</p>
+        </div>
+      </div>
+      <p className="mt-4">
+        Already have an account
+        <Link to={"/login"} className="text-[#B66053]">
+          Log in
+        </Link>
+      </p>
     </div>
   );
 };
 
-export default LoginPage;
+export default SignUpPage;
