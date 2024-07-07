@@ -1,12 +1,11 @@
 import React from "react";
 import logocorss from "../assets/logocross.svg";
 import { Link } from "react-router-dom";
-import Login from "./LoginContainer";
 
 const Header = () => {
   return (
     <>
-      <div className="flex gap-3 justify-between items-center  min-h-24 min-w-[1024px] mx-16 mt-8 ">
+      <div className="flex gap-3 justify-between items-center  max-h-24 max-w-[1340px] mx-16 my-8 ">
         <Link to={"/"}>
           <div className="flex">
             <img src={logocorss} alt="logo" />

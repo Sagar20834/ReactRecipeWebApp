@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { FaEnvelope, FaFacebook, FaLock, FaUser } from "react-icons/fa";
 import { FaGoogle } from "react-icons/fa6";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import logocorss from "../assets/logocross.svg";
 
 const SignUpPage = () => {
   const [input, setInput] = useState({
@@ -12,6 +13,7 @@ const SignUpPage = () => {
     checkboxterm: false,
   });
 
+  const navigate = useNavigate();
   const validate = (input) => {
     if (input.username === "") alert("Please enter a username");
     else if (input.email === "") alert("Please enter the email");
@@ -32,6 +34,7 @@ const SignUpPage = () => {
         repassword: "",
         checkboxterm: false,
       });
+      navigate("/login");
     }
   };
 
@@ -63,10 +66,10 @@ const SignUpPage = () => {
       <form className="items-center max-w-full" onSubmit={handleSubmit}>
         <h1 className="text-2xl font-bold mb-8"> Welcome to Join our Family</h1>
 
-        <div className="relative flex justify-start items-center border-b-[1px]">
-          <FaUser className="w-6 h-6 absolute pointer-events-none" />
+        <div className="  border-b-[1px] flex items-center   focus-within:border-b-2 focus-within:border-[#B66053]">
+          <FaUser className="w-6 h-6 absolute pointer-events-none text-gray-200" />
           <input
-            className="h-12 w-90 ml-4 rounded w-full py-2 px-3 text-black font-semibold leading-tight focus:outline-none focus:border-b-2 focus:border-[#B66053]"
+            className="h-12 w-90 ml-6 rounded w-full py-2 px-3 text-black font-medium leading-tight focus:outline-none  "
             type="text"
             name="username"
             id="username"
@@ -75,10 +78,11 @@ const SignUpPage = () => {
             onChange={handleChange}
           />
         </div>
-        <div className="relative flex justify-start items-center border-b-[1px]">
-          <FaEnvelope className="w-6 h-6 absolute pointer-events-none" />
+
+        <div className="border-b-[1px] flex items-center   focus-within:border-b-2 focus-within:border-[#B66053]">
+          <FaEnvelope className="w-6 h-6 absolute pointer-events-none text-gray-200" />
           <input
-            className="h-12 w-90 ml-4 rounded w-full py-2 px-3 text-black font-semibold leading-tight focus:outline-none focus:border-b-2 focus:border-[#B66053]"
+            className="h-12 w-90 ml-6 rounded w-full py-2 px-3 text-black font-medium leading-tight focus:outline-none "
             type="email"
             name="email"
             id="useremail"
@@ -87,10 +91,10 @@ const SignUpPage = () => {
             onChange={handleChange}
           />
         </div>
-        <div className="relative flex justify-start items-center border-b-[1px]">
-          <FaLock className="w-6 h-6 absolute pointer-events-none" />
+        <div className="border-b-[1px] flex items-center   focus-within:border-b-2 focus-within:border-[#B66053]">
+          <FaLock className="w-6 h-6 absolute pointer-events-none text-gray-200" />
           <input
-            className="h-12 w-90 ml-4 rounded w-full py-2 px-3 text-black font-semibold leading-tight focus:outline-none focus:border-b-2 focus:border-[#B66053]"
+            className="h-12 w-90 ml-6 rounded w-full py-2 px-3 text-black font-medium leading-tight focus:outline-none"
             type="password"
             name="password"
             id="password"
@@ -99,10 +103,10 @@ const SignUpPage = () => {
             onChange={handleChange}
           />
         </div>
-        <div className="relative flex justify-start items-center border-b-[1px]">
-          <FaLock className="w-6 h-6 absolute pointer-events-none" />
+        <div className="border-b-[1px] flex items-center   focus-within:border-b-2 focus-within:border-[#B66053]">
+          <FaLock className="w-6 h-6 absolute pointer-events-none text-gray-200" />
           <input
-            className="h-12 w-90 ml-4 rounded w-full py-2 px-3 text-black font-semibold leading-tight focus:outline-none focus:border-b-2 focus:border-[#B66053]"
+            className="h-12 w-90 ml-6 rounded w-full py-2 px-3 text-black font-medium leading-tight focus:outline-none "
             type="password"
             name="repassword"
             id="repassword"
@@ -145,10 +149,16 @@ const SignUpPage = () => {
       </div>
       <p className="mt-4">
         Already have an account
-        <Link to={"/login"} className="text-[#B66053]">
+        <Link to={"/login"} className="text-[#B66053] ml-2">
           Log in
         </Link>
       </p>
+      <div className="flex justify-end">
+        <img src={logocorss} alt="logo" />
+        <p className=" text-2xl font-bold">
+          Perfect<span className=" text-[#B66053] ">Receipe</span>
+        </p>
+      </div>
     </div>
   );
 };
