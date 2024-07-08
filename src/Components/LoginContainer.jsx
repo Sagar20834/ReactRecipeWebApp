@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import image from "../assets/Loginpageimage.jpeg";
 
 import SignUpPage from "./SignUpPage";
+import SignUpForm from "./SignUpForm";
 
 const LoginContainer = () => {
   const [userName, setUserName] = useState("");
@@ -11,7 +12,7 @@ const LoginContainer = () => {
       <div className="flex gap-4">
         <img src={image} alt="image" className="w-1/2 h-auto object-cover" />
 
-        <SignUpPage />
+        <SignUpForm />
       </div>
     </div>
   );
