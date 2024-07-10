@@ -44,23 +44,25 @@ const SignUpForm = () => {
                 minLength: 8,
               })}
               aria-invalid={errors.username ? "true" : "false"}
+              aria-valuemax={errors.maxLength ? "true" : "false"}
+              aria-valuemin={errors.minLength ? "true" : "false"}
               placeholder="Enter the Username"
             />
             {errors.username?.type === "required" && (
               <p className=" absolute top-2 -right-8 text-red-600">
-                *First name is required
+                ** First name is required
               </p>
             )}
 
             {errors.username?.type === "maxLength" && (
               <p role="alert" className=" absolute top-2 -right-8 text-red-600">
-                *Max Length is 25
+                ** Max Length is 25
               </p>
             )}
 
             {errors.username?.type === "minLength" && (
               <p role="alert" className=" absolute top-2 -right-8 text-red-600">
-                *Min Length is 8
+                ** Min Length is 8
               </p>
             )}
           </div>
