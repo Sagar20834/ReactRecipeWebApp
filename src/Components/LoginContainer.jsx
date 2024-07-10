@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import image from "../assets/Loginpageimage.jpeg";
 
-import SignUpPage from "./SignUpPage";
+import SignUpPageOld from "./SignUpPageOld";
 import SignUpForm from "./SignUpForm";
 
 const LoginContainer = () => {

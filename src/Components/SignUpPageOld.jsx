@@ -4,7 +4,7 @@ import { FaGoogle } from "react-icons/fa6";
 import { Link, useNavigate } from "react-router-dom";
 import logocorss from "../assets/logocross.svg";
 
-const SignUpPage = () => {
+const SignUpPageOld = () => {
   const [input, setInput] = useState({
     username: "",
     email: "",
@@ -163,4 +163,4 @@ const SignUpPage = () => {
   );
 };
 
-export default SignUpPage;
+export default SignUpPageOld;
