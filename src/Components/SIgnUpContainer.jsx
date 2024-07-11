@@ -2,10 +2,9 @@ import React, { useState } from "react";
 
 import image from "../assets/Loginpageimage.jpeg";
 
-import SignUpPageOld from "./SignUpPageOld";
 import SignUpForm from "./SignUpForm";
 
-const LoginContainer = () => {
+const SIgnUpContainer = () => {
   const [userName, setUserName] = useState("");
   return (
     <div className="  mx-24 mb-8 flex justify-normal items-start gap-4 shadow-2xl p-4">
@@ -18,4 +17,4 @@ const LoginContainer = () => {
   );
 };
 
-export default LoginContainer;
+export default SIgnUpContainer;

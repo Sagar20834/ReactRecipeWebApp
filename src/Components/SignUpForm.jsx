@@ -11,6 +11,8 @@ import {
   FaEyeSlash,
 } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const SignUpForm = () => {
   const navigate = useNavigate();
@@ -32,18 +34,26 @@ const SignUpForm = () => {
   } = useForm();
 
   const onSubmit = (data) => {
-    console.log("data submitted", data);
+    // Check if email already exists
+    const emailExists = savedData.some((user) => user.email === data.email);
 
-    setSavedData([...savedData, data]);
-    localStorage.setItem("user", JSON.stringify([...savedData, data]));
-    reset({
-      username: "",
-      email: "",
-      password: "",
-      repassword: "",
-      checkboxterm: false,
-    });
-    // navigate("/login");
+    if (emailExists) {
+      toast.error("A user with this email already exists");
+    } else {
+      setSavedData([...savedData, data]);
+      localStorage.setItem("user", JSON.stringify([...savedData, data]));
+      toast.success("Sign up successful! Redirecting to login page...");
+      reset({
+        username: "",
+        email: "",
+        password: "",
+        repassword: "",
+        checkboxterm: false,
+      });
+      setTimeout(() => {
+        navigate("/login");
+      }, 2000);
+    }
   };
 
   const togglePasswordVisibility = () => {
@@ -56,6 +66,7 @@ const SignUpForm = () => {
 
   return (
     <>
+      <ToastContainer />
       <div className="flex flex-col justify-between md:w-[480px]">
         <form
           className="items-center max-w-full"

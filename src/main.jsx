@@ -10,9 +10,9 @@ import Heropage from "./Components/Heropage.jsx";
 
 import BlogCard from "./Components/BlogCard.jsx";
 import PopularCategories from "./Components/PopularCategories.jsx";
-import LoginContainer from "./Components/LoginContainer.jsx";
-import SignUp from "./Components/SignUp.jsx";
-import SignUpPageOld from "./Components/SignUpPageOld.jsx";
+import SIgnUpContainer from "./Components/SIgnUpContainer.jsx";
+import Login from "./Components/Login.jsx";
+import { AuthProvider } from "./Components/AuthContext.jsx";
 
 const router = createBrowserRouter([
   {
@@ -46,16 +46,18 @@ const router = createBrowserRouter([
       },
       {
         path: "/login",
-        element: <SignUpPageOld />,
+        element: <Login />,
       },
       {
         path: "/signup",
-        element: <LoginContainer />,
+        element: <SIgnUpContainer />,
       },
     ],
   },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <RouterProvider router={router} />
+  <AuthProvider>
+    <RouterProvider router={router} />
+  </AuthProvider>
 );
