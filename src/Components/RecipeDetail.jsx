@@ -19,13 +19,13 @@ import {
 const RecipeDetail = () => {
   const title = new URLSearchParams(location.search).get("name");
   const params = useParams();
-  const [cardData, setCardData] = useState({});
+  const [cardDatas, setCardDatas] = useState({ CardData });
+  const [checkedIngredients, setCheckedIngredients] = useState([]);
   useEffect(() => {
     {
       CardData.map((data) => {
         if (title === data.title) {
-          console.log(data);
-          setCardData({
+          setCardDatas({
             cal: data.cal,
             calimage: data.calimage,
             name: data.name,
@@ -49,18 +49,27 @@ const RecipeDetail = () => {
             id: data.id,
           });
         }
+        return cardDatas;
       });
     }
-  }, []);
-  console.log(title);
-  console.log(params);
+  }, [title]);
+
+  const handleCheckboxChange = (ingredient) => {
+    setCheckedIngredients((prevCheckedIngredients) =>
+      prevCheckedIngredients.includes(ingredient)
+        ? prevCheckedIngredients.filter((item) => item !== ingredient)
+        : [...prevCheckedIngredients, ingredient]
+    );
+  };
+  //   console.log(title);
+  //   console.log(params);
   return (
-    <div className="container mx-auto px-6">
+    <div className="container mx-auto px-8 ">
       <h1 className="text-xl font-bold">
         <Breadcrumb className="inline-block" />
       </h1>
       <div className="mt-4 ">
-        <h1 className="text-5xl mb-4 max-w-[60%]">{cardData.title}</h1>
+        <h1 className="text-5xl mb-4 max-w-[60%]">{cardDatas.title}</h1>
         <div className="flex flex-wrap gap-6 text-sm font-medium">
           <div className="flex  gap-2  items-center">
             <FaUser />
@@ -97,7 +106,7 @@ const RecipeDetail = () => {
         <div className=" leftside max-w-[65%]">
           <img
             className="w-full max-h-[456px] object-cover border-2 border-violet-100 mb-9"
-            src={cardData.recipeimage}
+            src={cardDatas.recipeimage}
             alt="Recipe image"
           />
           <div className="flex gap-4 justify-around mx-16 mb-6">
@@ -122,8 +131,52 @@ const RecipeDetail = () => {
               </button>
             </div>
           </div>
-          <h1 className="font-medium text-sm mb-4">{cardData.description} </h1>
-          <h1 className="text-4xl">Ingredients : </h1>
+          <h1 className="font-medium text-sm mb-4">{cardDatas.description} </h1>
+          <h1 className="text-4xl mb-4">Ingredients : </h1>
+          <ul className="list-none ">
+            {console.log(cardDatas.ingredients)}
+            {cardDatas.ingredients
+              ? cardDatas.ingredients.map((ingredient, i) => (
+                  <li
+                    key={i}
+                    className="flex items-center gap-4 font-bold text-lg mb-2 cursor-pointer w-3/4"
+                  >
+                    <input
+                      className="accent-[#B66053] w-5 h-5 border rounded-lg cursor-pointer"
+                      type="checkbox"
+                      checked={checkedIngredients.includes(ingredient.name)}
+                      onChange={() => handleCheckboxChange(ingredient.name)}
+                    />
+                    <span
+                      onClick={() => handleCheckboxChange(ingredient.name)}
+                      className={
+                        checkedIngredients.includes(ingredient.name)
+                          ? "line-through text-gray-400"
+                          : ""
+                      }
+                    >
+                      {ingredient.name}
+                    </span>
+                  </li>
+                ))
+              : "Loading ingredients..."}
+          </ul>
+
+          <h1 className="text-4xl mb-4">Instructions : </h1>
+          <ol className="text-lg ">
+            {cardDatas.instructions
+              ? cardDatas.instructions.map((instruction, i) => (
+                  <li key={i} className="  flex items-start gap-4 mb-6">
+                    <span className="bg-[#B66053] text-white rounded-md min-w-6 min-h-6 flex items-center justify-center">
+                      {i + 1}
+                    </span>
+                    <span className="font-medium text-base">
+                      {instruction.text}
+                    </span>
+                  </li>
+                ))
+              : "Loading instructions..."}
+          </ol>
         </div>
         <div className="rightside"></div>
       </div>
