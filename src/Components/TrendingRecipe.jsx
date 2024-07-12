@@ -1,6 +1,6 @@
 import React from "react";
 import data from "../CardData";
-import TrendingRecipeCard from "./TrendingRecipeCard";
+import RecipeCard from "./RecipeCard";
 import { Link } from "react-router-dom";
 
 const TrendingRecipe = () => {
@@ -19,21 +19,12 @@ const TrendingRecipe = () => {
       </p>
       <div className="  my-0 flex gap-24 flex-wrap ">
         {data.map(
-          ({
-            id,
-            star,
-            title,
-            recipeimage,
-            calimage,
-            userimage,
-            name,
-            cal,
-          }) => {
+          ({ id, star, title, image, calimage, userimage, name, cal }) => {
             return (
-              <TrendingRecipeCard
+              <RecipeCard
                 key={id}
                 name={name}
-                recipeimage={recipeimage}
+                image={image}
                 star={star}
                 title={title}
                 calimage={calimage}

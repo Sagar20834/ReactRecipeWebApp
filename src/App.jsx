@@ -8,11 +8,13 @@ import ShareRecipe from "./Components/ShareRecipe";
 
 import data from "./CardData";
 import Footer from "./Components/Footer";
+import Breadcrumb from "./Components/Breadcrumb";
 
 function App() {
   return (
     <>
       <Header />
+
       <Outlet />
       <Footer />
     </>

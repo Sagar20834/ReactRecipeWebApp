@@ -4,7 +4,7 @@ import logo2 from "../assets/User icon.svg";
 import logo3 from "../assets/calory.svg";
 import { Link } from "react-router-dom";
 import data from "../CardData";
-import TrendingRecipeCard from "./TrendingRecipeCard";
+import RecipeCard from "./RecipeCard";
 
 const Exploremorerecipe = () => {
   return (
@@ -22,21 +22,12 @@ const Exploremorerecipe = () => {
       </div>
       <div className="  my-0 flex gap-24 flex-wrap ">
         {data.map(
-          ({
-            id,
-            star,
-            title,
-            recipeimage,
-            calimage,
-            userimage,
-            name,
-            cal,
-          }) => {
+          ({ id, star, title, image, calimage, userimage, name, cal }) => {
             return (
-              <TrendingRecipeCard
+              <RecipeCard
                 key={id}
                 name={name}
-                recipeimage={recipeimage}
+                image={image}
                 star={star}
                 title={title}
                 calimage={calimage}

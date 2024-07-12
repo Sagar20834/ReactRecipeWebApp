@@ -53,20 +53,20 @@ const Login = () => {
   };
 
   return (
-    <div className="max-w-[460px] min-h-52 shadow-2xl mx-auto">
+    <div className="max-w-[420px] min-h-52 shadow-2xl mx-auto">
       <ToastContainer />
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="flex justify-center items-center flex-col m-16 p-2 gap-2"
+        className="flex justify-center items-center flex-col m-8 p-2 gap-2"
       >
         <span className="text-xl font-bold mb-8 text-center">
           Please Enter the Credentials
         </span>
 
-        <div className="relative border-b-[1px] flex items-center focus-within:border-b-2 focus-within:border-[#B66053]">
+        <div className="relative border-b-[1px] flex items-center focus-within:border-b-2 focus-within:border-[#B66053] w-full">
           <FaEnvelope className="w-6 h-6 absolute pointer-events-none text-gray-200" />
           <input
-            className="h-12 w-90 ml-6 rounded w-full py-2 px-3 text-black font-medium leading-tight focus:outline-none"
+            className="h-12 ml-6 rounded  py-2 px-3 text-black font-medium leading-tight focus:outline-none w-full"
             type="email"
             {...register("email", {
               required: "Email required",
@@ -85,10 +85,10 @@ const Login = () => {
           )}
         </div>
 
-        <div className="relative border-b-[1px] flex items-center focus-within:border-b-2 focus-within:border-[#B66053]">
+        <div className="relative border-b-[1px] flex items-center focus-within:border-b-2 focus-within:border-[#B66053] w-full  ">
           <FaLock className="w-6 h-6 absolute pointer-events-none text-gray-200" />
           <input
-            className="h-12 w-90 ml-6 rounded w-full py-2 px-3 text-black font-medium leading-tight focus:outline-none"
+            className="h-12  ml-6 rounded w-full py-2 px-3 text-black font-medium leading-tight focus:outline-none"
             type={showPassword ? "text" : "password"}
             {...register("password", {
               required: "Password required",

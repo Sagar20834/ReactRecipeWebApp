@@ -13,6 +13,7 @@ import PopularCategories from "./Components/PopularCategories.jsx";
 import SIgnUpContainer from "./Components/SIgnUpContainer.jsx";
 import Login from "./Components/Login.jsx";
 import { AuthProvider } from "./Components/AuthContext.jsx";
+import RecipeDetail from "./Components/RecipeDetail.jsx";
 
 const router = createBrowserRouter([
   {
@@ -51,6 +52,10 @@ const router = createBrowserRouter([
       {
         path: "/signup",
         element: <SIgnUpContainer />,
+      },
+      {
+        path: "/:recipe-detail",
+        element: <RecipeDetail />,
       },
     ],
   },

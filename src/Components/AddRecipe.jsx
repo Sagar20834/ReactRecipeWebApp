@@ -229,6 +229,34 @@ const AddRecipe = () => {
               </div>
             </div>
 
+            <div className="flex flex-col max-w-[520px] m-auto">
+              <label htmlFor="description" className="text-2xl font-medium m-2">
+                Description:
+              </label>
+              <textarea
+                className="p-2 border-violet-500 border-[1px] rounded-md"
+                type="text"
+                {...register("description", {
+                  required: "description is required",
+                  maxLength: {
+                    value: 500,
+                    message: "description should not exceed 50 characters",
+                  },
+                  minLength: {
+                    value: 5,
+                    message: "description should be at least 5 characters long",
+                  },
+                })}
+                aria-invalid={errors.description ? "true" : "false"}
+                placeholder="Enter the description"
+              />
+              {errors.description && (
+                <p role="alert" className="text-red-500">
+                  ** {errors.description.message}
+                </p>
+              )}
+            </div>
+
             <div className="flex flex-col max-w-[520px] m-auto mt-4">
               <label htmlFor="ingredients" className="text-2xl font-medium m-2">
                 Ingredients:
@@ -281,7 +309,7 @@ const AddRecipe = () => {
                       id={`instructions.${index}.image`}
                       accept="image/*"
                       onChange={(e) => handleStepImageChange(e, index)}
-                      className="hidden"
+                      className="hidden "
                     />
                     <input
                       className="p-2 border-violet-500 border-[1px] rounded-md flex-grow"
@@ -487,8 +515,8 @@ const AddRecipe = () => {
         </>
       ) : (
         <div className=" text-4xl m-auto flex items-center justify-center flex-col">
-          <div>Oops !! </div>
-          <h1 className=" ">Login to Proceed</h1>
+          <div className="m-3">Oops !! </div>
+          <h1 className="m-3 ">Please Login to Proceed</h1>
         </div>
       )}
     </>

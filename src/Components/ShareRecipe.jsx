@@ -1,5 +1,6 @@
 import React from "react";
 import Receipeimage from "../assets/Receipeimage.jpg";
+import { Link } from "react-router-dom";
 
 const ShareRecipe = () => {
   return (
@@ -15,8 +16,11 @@ const ShareRecipe = () => {
             repellat eos fuga dicta. Harum ipsa quia impedit quisquam quasi
             architecto.
           </p>
-          <button className=" bg-[#B66053] min-w-36 min-h-12   rounded-lg my-5 text-white m-auto p-4">
-            Create New Recipe
+          <button
+            className=" bg-[#B66053] min-w-36 min-h-12   rounded-lg my-5 text-white m-auto p-4"
+            onClick={(e) => {}}
+          >
+            <Link to={"/add-recipe"}>Create New Recipe</Link>
           </button>
         </div>
       </div>
