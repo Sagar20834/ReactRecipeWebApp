@@ -74,10 +74,22 @@ export default [
   {
     id: 1,
     star: 4.5,
-    userimage: "../assets/user.svg",
+    userimage:
+      "https://th.bing.com/th/id/OIP.18ygnwZ7ZIBpWdtoy6cG1QHaHk?w=178&h=182&c=7&r=0&o=5&pid=1.7",
     calimage: "../assets/calory.svg",
     name: "Sagar Sah",
     cal: 420,
+    comment:
+      "Wow , this recipe is a flavour explosion in my mouth ! Very delicious.",
+    cookingnote: [
+      { text: "Read the Entire Recipe" },
+      { text: "Make Notes While You Cook" },
+      { text: "Season and Taste-Test While Cooking" },
+      { text: "Pay Attention to Your Food’s Consistency" },
+      { text: "Improvise While Cooking But Not Baking" },
+      { text: "Don’t Be Afraid to Try New Things" },
+      { text: "Cook What You Know for Guests" },
+    ],
     description:
       "The Chicken Biryani are the most popular Internet recipes for the veggies and meat lovers Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolore, ipsam.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolore, ipsam. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolore, ipsam.",
     title: "Chicken Biryani",
@@ -149,10 +161,22 @@ export default [
   {
     id: 2,
     star: 4.5,
-    userimage: "../assets/user.svg",
+    userimage:
+      "https://th.bing.com/th/id/OIP.srNFFzORAaERcWvhwgPzVAHaHa?w=182&h=182&c=7&r=0&o=5&pid=1.7",
     calimage: "../assets/calory.svg",
     name: "john Wick",
     cal: 210,
+    comment:
+      "Wow , this recipe is a flavour explosion in my mouth ! Very delicious. this one is the favourite recipe on this site",
+    cookingnote: [
+      { text: "Read the Entire Recipe" },
+      { text: "Make Notes While You Cook" },
+      { text: "Season and Taste-Test While Cooking" },
+      { text: "Pay Attention to Your Food’s Consistency" },
+      { text: "Improvise While Cooking But Not Baking" },
+      { text: "Don’t Be Afraid to Try New Things" },
+      { text: "Cook What You Know for Guests" },
+    ],
     description:
       "The Chicken Biryani are the most popular Internet recipes for the veggies and meat lovers Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolore, ipsam.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolore, ipsam. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolore, ipsam.",
     title: "Fish Curry",
@@ -203,10 +227,22 @@ export default [
   {
     id: 3,
     star: 3,
-    userimage: "../assets/user.svg",
+    userimage:
+      "https://th.bing.com/th/id/OIP.fR7rmgsi-7ucmdv72tJpFQHaHa?w=186&h=186&c=7&r=0&o=5&pid=1.7",
     calimage: "../assets/calory.svg",
     name: "Manish Gupta",
     cal: 300,
+    comment:
+      "Great  , this recipe is a flavour explosion in my mouth ! Very delicious.",
+    cookingnote: [
+      { text: "Read the Entire Recipe" },
+      { text: "Make Notes While You Cook" },
+      { text: "Season and Taste-Test While Cooking" },
+      { text: "Pay Attention to Your Food’s Consistency" },
+      { text: "Improvise While Cooking But Not Baking" },
+      { text: "Don’t Be Afraid to Try New Things" },
+      { text: "Cook What You Know for Guests" },
+    ],
     description:
       "Vegetable pulao recipe is an easy to cook recipe that can be made in a single pot! With a mix of rice and your favorite vegetables, you can give it your own twist and enjoy it as a wholesome meal with some curd or raita. It is a beginner friendly vegetable pulao rice recipe that can be cooked in a jiffy and enjoyed anytime of the day. THE HISTORY OF VEGETABLE PULAO RECIPE IN INDIA While rice is a staple in many parts of India, the vegetable pulao recipe traces back its origin to Persia. Pulao or Pilaf (Turkish word derived from Persian) is a rice dish made by combining mild spices and an assortment of vegetables to give it an aromatic flavor. From Persia/Iran, the dish travelled to India and quickly became a beloved dish that can easily embrace the diverse cultures, ingredients, and flavor profile of the region it is made in. Its versatility is one of the reasons veg pulao is a popular rice dish in India.",
     title: "Veg Pulao",
