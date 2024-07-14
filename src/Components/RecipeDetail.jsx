@@ -26,6 +26,7 @@ import {
   FaStar,
   FaTree,
 } from "react-icons/fa";
+import RecipeCard from "./RecipeCard";
 
 const RecipeDetail = () => {
   const title = new URLSearchParams(location.search).get("name");
@@ -490,7 +491,27 @@ const RecipeDetail = () => {
             </div>
           </div>
 
-          <div></div>
+          <div>
+            <h1 className="text-2xl font-semibold mt-4">You might like this</h1>
+            <div className="grid grid-cols-3 gap-4">
+              {CardData.map((card) => {
+                return (
+                  <div key={card.id} className="flex  gap-4  ">
+                    {
+                      <RecipeCard
+                        id={card.id}
+                        star={card.star}
+                        title={card.title}
+                        image={card.image}
+                        width={240}
+                      />
+                    }
+                  </div>
+                );
+                console.log(card);
+              })}
+            </div>
+          </div>
         </div>
 
         <div className="rightside"></div>

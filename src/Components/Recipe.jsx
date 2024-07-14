@@ -18,6 +18,7 @@ const Recipe = () => {
               calimage={calimage}
               userimage={userimage}
               cal={cal}
+              width={320}
             />
           );
         }
