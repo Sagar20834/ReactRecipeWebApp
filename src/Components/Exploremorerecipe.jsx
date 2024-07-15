@@ -33,6 +33,7 @@ const Exploremorerecipe = () => {
                 calimage={calimage}
                 userimage={userimage}
                 cal={cal}
+                width={320}
               />
             );
           }

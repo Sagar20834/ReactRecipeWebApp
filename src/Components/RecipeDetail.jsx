@@ -491,12 +491,12 @@ const RecipeDetail = () => {
             </div>
           </div>
 
-          <div>
+          <div className="mb-16">
             <h1 className="text-2xl font-semibold mt-4">You might like this</h1>
-            <div className="grid grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 gap-4 ">
               {CardData.map((card) => {
                 return (
-                  <div key={card.id} className="flex  gap-4  ">
+                  <div key={card.id} className="flex    ">
                     {
                       <RecipeCard
                         id={card.id}

@@ -30,6 +30,7 @@ const TrendingRecipe = () => {
                 calimage={calimage}
                 userimage={userimage}
                 cal={cal}
+                width={320}
               />
             );
           }

@@ -29,12 +29,15 @@ const Heropage = () => {
             distinctio. Inventore natus eveniet unde dolores soluta error quos
             nam. Culpa excepturi ratione facilis soluta?
           </p>
-          <button className=" bg-[#B26357] min-w-32 min-h-9  rounded-lg my-5">
+          <Link
+            to={"/signup"}
+            className=" bg-[#B26357] text-white min-w-32 min-h-9  rounded-lg my-5 flex justify-center items-center"
+          >
             Sign Up
-          </button>
+          </Link>
           <div className="flex  justify-center items-center gap-3">
             <p>Do You Have an Account ?</p>
-            <Link to={"/"} className=" text-[#B26357]">
+            <Link to={"/login"} className=" text-[#B26357]">
               Log in
             </Link>
           </div>
