@@ -13,7 +13,7 @@ const Exploremorerecipe = () => {
         <h1 className="text-5xl font-bold ">Explore Receipe</h1>
         <p className="flex flex-row-reverse">
           <Link
-            to={"/fb.com"}
+            to={"/recipe"}
             className="  text-[#a66d6a] text-lg  font-semibold "
           >
             View More

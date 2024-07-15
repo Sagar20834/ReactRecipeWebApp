@@ -27,16 +27,22 @@ import {
   FaTree,
 } from "react-icons/fa";
 import RecipeCard from "./RecipeCard";
+import NutritionFacts from "./NutritionFacts";
+import RecentRecipes from "./RecentRecipes";
+import StayConnected from "./StayConnected";
+import RelatedRecipes from "./RelatedRecipes";
+import RelatedProduct from "./RelatedProduct";
 
 const RecipeDetail = () => {
-  const title = new URLSearchParams(location.search).get("name");
+  const nameofrecipe = new URLSearchParams(location.search).get("name");
   const params = useParams();
   const [cardDatas, setCardDatas] = useState({ CardData });
   const [checkedIngredients, setCheckedIngredients] = useState([]);
+
   useEffect(() => {
     {
       CardData.map((data) => {
-        if (title === data.title) {
+        if (nameofrecipe === data.title) {
           setCardDatas({
             cal: data.cal,
             comment: data.comment,
@@ -66,7 +72,7 @@ const RecipeDetail = () => {
         return cardDatas;
       });
     }
-  }, [title]);
+  }, [nameofrecipe]);
 
   const handleCheckboxChange = (ingredient) => {
     setCheckedIngredients((prevCheckedIngredients) =>
@@ -78,7 +84,7 @@ const RecipeDetail = () => {
   //   console.log(title);
   //   console.log(params);
   return (
-    <div className="container mx-auto px-8 ">
+    <div className="container   mx-auto px-8 ">
       <h1 className="text-xl font-bold">
         <Breadcrumb className="inline-block" />
       </h1>
@@ -116,7 +122,7 @@ const RecipeDetail = () => {
         </div>
       </div>
       <hr className="my-6" />
-      <div>
+      <div className="flex gap-8 w-full">
         <div className=" leftside max-w-[65%]">
           <img
             className="w-full max-h-[456px] object-cover border-2 border-violet-100 mb-9"
@@ -514,7 +520,17 @@ const RecipeDetail = () => {
           </div>
         </div>
 
-        <div className="rightside"></div>
+        <div className="rightside w-full ml-8">
+          <NutritionFacts />
+          <h1 className="mt-8 text-3xl font-semibold">Recent Recipes</h1>
+          <RecentRecipes title={nameofrecipe} />
+          <StayConnected />
+          <h1 className="my-8 text-3xl font-semibold">Related Recipes</h1>
+          <RelatedRecipes />
+          <h1 className="my-8 text-3xl font-semibold">Trending Recipes</h1>
+          <RecentRecipes title={nameofrecipe} />
+          <RelatedProduct />
+        </div>
       </div>
     </div>
   );

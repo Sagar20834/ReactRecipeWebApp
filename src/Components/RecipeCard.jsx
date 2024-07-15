@@ -1,20 +1,7 @@
 import React, { useEffect } from "react";
-import user from "../assets/user.svg";
-import logo3 from "../assets/calory.png";
 import { Link } from "react-router-dom";
 import { FaFireAlt } from "react-icons/fa";
-
-const RecipeCard = ({
-  id,
-  star,
-  title,
-  image,
-  calimage,
-  userimage,
-  name,
-  cal,
-  width,
-}) => {
+const RecipeCard = ({ star, title, image, userimage, name, cal, width }) => {
   return (
     <Link to={`/recipe-detail?name=${title}`}>
       <div
