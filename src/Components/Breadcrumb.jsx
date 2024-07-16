@@ -1,4 +1,3 @@
-// src/components/Breadcrumb.js
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
 
@@ -26,12 +25,12 @@ const Breadcrumb = ({ className = "" }) => {
                   className="breadcrumb-item text-gray-500"
                   aria-current="page"
                 >
-                  {path.replace(/-/g, " ")}
+                  {decodeURIComponent(path.replace(/-/g, " "))}
                 </li>
               ) : (
                 <li className="breadcrumb-item">
                   <Link to={routeTo} className="text-blue-500 hover:underline">
-                    {path.replace(/-/g, " ")}
+                    {decodeURIComponent(path.replace(/-/g, " "))}
                   </Link>
                 </li>
               )}
