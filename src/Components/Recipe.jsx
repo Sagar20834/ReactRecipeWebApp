@@ -5,7 +5,7 @@ import { Link, useParams } from "react-router-dom";
 
 const Recipe = () => {
   return (
-    <div className="  m-16 flex gap-24 flex-wrap ">
+    <div className="  m-16 flex gap-4 flex-wrap ">
       {Data.map(
         ({ id, star, title, image, calimage, userimage, name, cal }) => {
           return (

@@ -3,11 +3,15 @@ import CardData from "../CardData";
 import { FaFire, FaFireAlt, FaStar } from "react-icons/fa";
 import { FaFireBurner, FaStarHalfStroke } from "react-icons/fa6";
 import { Link } from "react-router-dom";
+import OnclickMovetoTop from "./OnclickMovetoTop";
 
 const RelatedRecipes = () => {
   return (
     <>
-      <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 gap-1  ">
+      <div
+        className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 gap-1  "
+        onClick={OnclickMovetoTop}
+      >
         {CardData.map((card) => {
           return (
             <Link

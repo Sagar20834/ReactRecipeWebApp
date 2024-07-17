@@ -6,7 +6,7 @@ const RecipeCard = ({ star, title, image, userimage, name, cal, width }) => {
     <Link to={`/recipe-detail?name=${title}`}>
       <div
         className="flex flex-col shadow-2xl  overflow-hidden mt-6  max-h-[352px] gap-4 text-xl  "
-        style={{ minWidth: width }}
+        style={{ minBlockSize: width }}
       >
         <img src={image} alt="user" className="h-[164px] w-full object-cover" />
         <div className="p-2 ">

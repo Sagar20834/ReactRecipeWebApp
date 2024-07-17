@@ -18,8 +18,9 @@ const TrendingRecipe = () => {
         </Link>
       </p>
       <div className="  my-0 flex gap-24 flex-wrap ">
-        {data.map(
-          ({ id, star, title, image, calimage, userimage, name, cal }) => {
+        {data
+          .slice(0, 4)
+          .map(({ id, star, title, image, calimage, userimage, name, cal }) => {
             return (
               <RecipeCard
                 key={id}
@@ -33,8 +34,7 @@ const TrendingRecipe = () => {
                 width={320}
               />
             );
-          }
-        )}
+          })}
       </div>
     </div>
   );

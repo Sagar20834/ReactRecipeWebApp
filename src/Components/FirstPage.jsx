@@ -8,7 +8,7 @@ import { FaStarHalfStroke } from "react-icons/fa6";
 const FirstPage = () => {
   return (
     <>
-      <div className="hero-page flex justify-between items-center max-w-full mx-16 mt-8 ">
+      <div className="hero-page flex justify-between items-center max-w-full mx-16 mt-8 mb-16 ">
         <div className="side-1 flex flex-col justify-start items-start w-full md:w-1/2 px-4">
           <h1 className="text-5xl font-bold">Your Daily Dish</h1>
           <h1 className="text-5xl font-bold">

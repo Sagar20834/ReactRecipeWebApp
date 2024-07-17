@@ -32,6 +32,7 @@ import RecentRecipes from "./RecentRecipes";
 import StayConnected from "./StayConnected";
 import RelatedRecipes from "./RelatedRecipes";
 import RelatedProduct from "./RelatedProduct";
+import OnclickMovetoTop from "./OnclickMovetoTop";
 
 const RecipeDetail = () => {
   const nameofrecipe = new URLSearchParams(location.search).get("name");
@@ -74,6 +75,12 @@ const RecipeDetail = () => {
     }
   }, [nameofrecipe]);
 
+  // const onclickhandletoit = () => {
+  //   window.scrollTo({
+  //     top: 0,
+  //     behavior: "smooth", // Optional: smooth scroll animation
+  //   });
+  // };
   const handleCheckboxChange = (ingredient) => {
     setCheckedIngredients((prevCheckedIngredients) =>
       prevCheckedIngredients.includes(ingredient)
@@ -154,7 +161,7 @@ const RecipeDetail = () => {
           <h1 className="font-medium text-sm mb-4">{cardDatas.description} </h1>
           <h1 className="text-4xl mb-4">Ingredients : </h1>
           <ul className="list-none ">
-            {console.log(cardDatas.ingredients)}
+            {console.log(cardDatas.ingredients, "hii")}
             {cardDatas.ingredients
               ? cardDatas.ingredients.map((ingredient, i) => (
                   <li
@@ -502,7 +509,7 @@ const RecipeDetail = () => {
             <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 gap-4 ">
               {CardData.map((card) => {
                 return (
-                  <div key={card.id} className="flex    ">
+                  <div onClick={OnclickMovetoTop} key={card.id}>
                     {
                       <RecipeCard
                         id={card.id}

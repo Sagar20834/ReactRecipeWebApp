@@ -21,8 +21,9 @@ const Exploremorerecipe = () => {
         </p>
       </div>
       <div className="  my-0 flex gap-24 flex-wrap ">
-        {data.map(
-          ({ id, star, title, image, calimage, userimage, name, cal }) => {
+        {data
+          .slice(0, 4)
+          .map(({ id, star, title, image, calimage, userimage, name, cal }) => {
             return (
               <RecipeCard
                 key={id}
@@ -36,8 +37,7 @@ const Exploremorerecipe = () => {
                 width={320}
               />
             );
-          }
-        )}
+          })}
       </div>
     </>
   );
