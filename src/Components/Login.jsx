@@ -36,24 +36,6 @@ const Login = () => {
     const { email, password } = data;
     let userFound = false;
 
-    const foundUser = axios
-      .get("/post")
-      .then(function (response) {
-        // handle success
-        console.log(response);
-      })
-      .catch(function (error) {
-        // handle error
-        console.log(error);
-      })
-      .finally(function () {
-        // always executed
-      });
-
-    const handleSubmitBackend = () => {
-      foundUser();
-    };
-
     user.forEach((eachData) => {
       if (eachData.email === email && eachData.password === password) {
         userFound = true;
@@ -88,7 +70,7 @@ const Login = () => {
             className="h-12 ml-6 rounded  py-2 px-3 text-black font-medium leading-tight focus:outline-none w-full"
             type="email"
             {...register("email", {
-              // required: "Email required",
+              required: "Email required",
               pattern: {
                 value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
                 message: "Must be a valid email address",
@@ -110,7 +92,7 @@ const Login = () => {
             className="h-12  ml-6 rounded w-full py-2 px-3 text-black font-medium leading-tight focus:outline-none"
             type={showPassword ? "text" : "password"}
             {...register("password", {
-              // required: "Password required",
+              required: "Password required",
             })}
             aria-invalid={errors.password ? "true" : "false"}
             placeholder="Password"
@@ -132,7 +114,6 @@ const Login = () => {
         <div className="flex gap-5 shrink">
           <button
             type="submit"
-            onSubmit={handleSubmitBackend()}
             className="flex bg-[#E7EDE7] min-w-32 rounded-lg text-black hover:scale-110 justify-center items-center text-center m-auto min-h-9 my-4"
           >
             Login
