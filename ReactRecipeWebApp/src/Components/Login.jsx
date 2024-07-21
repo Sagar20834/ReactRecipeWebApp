@@ -20,15 +20,19 @@ const Login = () => {
     setShowPassword(!showPassword);
   };
 
-  const onSubmit = async (data) => {
-    console.log("submit called", data);
-      try {
-        // Convert data to query parameters
-        const response = await axios.get("http://localhost:3000/post", { params: data });
-        console.log("response is", response.data);
-      } catch (error) {
-        console.error("Error during API call", error);
-      }
+  // const onSubmit = async (data) => {
+  //   console.log("submit called", data);
+  //     try {
+  //       // Convert data to query parameters
+  //       const response = await axios.get("http://localhost:3000/post", { params: data });
+  //       console.log("response is", response.data);
+  //     } catch (error) {
+  //       console.error("Error during API call", error);
+  //     }
+  // };
+
+  const onSubmit = (data) => {
+    checkUserPresent(data);
   };
 
   const {
