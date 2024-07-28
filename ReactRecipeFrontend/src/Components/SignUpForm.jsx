@@ -44,7 +44,7 @@ const SignUpForm = () => {
       localStorage.setItem("user", JSON.stringify([...savedData, data]));
       toast.success("Sign up successful! Redirecting to login page...");
       reset({
-        username: "",
+        fullname: "",
         email: "",
         password: "",
         repassword: "",
@@ -81,8 +81,8 @@ const SignUpForm = () => {
             <input
               className="h-12 w-90 ml-6 rounded w-full py-2 px-3 text-black font-medium leading-tight focus:outline-none"
               type="text"
-              {...register("username", {
-                required: "Username is required",
+              {...register("fullname", {
+                required: "fullname is required",
                 maxLength: {
                   value: 25,
                   message: "Max length is 25",
@@ -92,12 +92,12 @@ const SignUpForm = () => {
                   message: "Min length is 8",
                 },
               })}
-              aria-invalid={errors.username ? "true" : "false"}
-              placeholder="Enter the Username"
+              aria-invalid={errors.fullname ? "true" : "false"}
+              placeholder="Enter the fullname"
             />
-            {errors.username && (
+            {errors.fullname && (
               <p role="alert" className="absolute top-2 -right-8 text-red-600">
-                ** {errors.username.message}
+                ** {errors.fullname.message}
               </p>
             )}
           </div>
