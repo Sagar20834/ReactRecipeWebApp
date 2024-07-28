@@ -4,8 +4,6 @@ import { FaCamera, FaTrash } from "react-icons/fa6";
 import saveRecipeData from "./RecipeData";
 import { toast, ToastContainer } from "react-toastify";
 import { AuthContext } from "./AuthContext";
-import { Link } from "react-router-dom";
-
 const AddRecipe = () => {
   const [image, setImage] = useState(null);
   const [coverImage, setCoverImage] = useState(null);
